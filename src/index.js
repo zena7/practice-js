@@ -10,25 +10,18 @@ const  personalMovieDB = {
   'privat': false,
 };
 
-let a = prompt('Один из последних просмотренных фильмов?', '');
-
-while ( a === null || a.length === 0 || a.length > 50 ) {
-  a = prompt('Один из последних просмотренных фильмов?', '');
+for (let  i = 0; i < 2; i++) {
+   let a = prompt('Один из последних просмотренных фильмов?', ''),
+    b = Number(prompt('На сколько оцените его?', ''));
+  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+    personalMovieDB.movies[a] = b;
+    console.log('done');
+  } else {
+    console.log('error');
+    i--;
+  };  
 };
 
-// let c = prompt('Один из последних просмотренных фильмов?', '');
-// let d = Number(prompt('На сколько оцените его?', ''));
-
-let b = Number(prompt('На сколько оцените его?', ''));
-console.log(b)
-while ( b === 0 || b.length === 1 ) {
-  b = Number(prompt('На сколько оцените его?', ''));
-};
-console.log(b);
-
-
-personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
 
 console.log(personalMovieDB);
 
